@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Customer Pulse concept</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7698FF}a:hover{color:#9DB4FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1400px; box-sizing: border-box; padding: 56px 64px; background: {{t.bg}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; display: flex; flex-direction: column; gap: 40px">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 900px">
+      <div style="font-size: 13px; letter-spacing: 0.12em; color: {{t.faint}}">CUSTOMER PULSE · CONCEPT v0.2 · THEME: OMARCHY AETHER</div>
+      <h1 style="margin: 0; font-size: 50px; line-height: 1.05; font-weight: 800; color: {{t.amber}}">Every customer is a player card.</h1>
+      <p style="margin: 0; font-family: Inter, sans-serif; font-size: 19px; line-height: 1.55; color: {{t.sub}}">Salesforce account data, the live support case and any operational event touching the customer, fused into one card. Six roles, same card, read at different depths.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-end">
+      <button onClick="{{toggle}}" aria-label="Toggle light and dark theme" style="height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid {{t.line}}; background: {{t.raised}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 10px"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"></path></svg>{{t.toggle}}</button>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end">
+        <sc-for list="{{legend}}" as="s" hint-placeholder-count="4">
+          <span style="padding: 6px 12px; border-radius: 999px; background: {{s.bg}}; color: {{s.fg}}; border: 1.5px {{s.bs}} {{s.bd}}; font-size: 12px; font-weight: 700; letter-spacing: 0.06em">{{s.label}}</span>
+        </sc-for>
+      </div>
+      <span style="font-size: 12px; color: {{t.faint}}">Status = fill + outline + label, never hue alone</span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 48px; align-items: flex-start">
+
+    <div style="position: relative; width: 340px; flex-shrink: 0; background: {{t.raised}}; border: 3px solid {{t.crit}}; border-radius: 20px; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; box-shadow: {{t.shadow}}">
+      <div style="display: flex; justify-content: space-between; align-items: center">
+        <span style="font-size: 11px; letter-spacing: 0.08em; color: {{t.faint}}">TIER 1 · PREMIER</span>
+        <span style="padding: 4px 10px; border-radius: 999px; background: {{t.crit}}; color: {{t.onCrit}}; font-size: 11px; font-weight: 800; letter-spacing: 0.06em">CRITICAL</span>
+      </div>
+      <div style="display: flex; gap: 14px; align-items: center">
+        <div style="width: 56px; height: 56px; border-radius: 14px; background: {{t.well}}; color: {{t.amber}}; border: 1px solid {{t.line}}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 20px">HF</div>
+        <div style="display: flex; flex-direction: column; gap: 3px">
+          <div style="font-size: 21px; font-weight: 800; color: {{t.text}}">Halcyon Freight</div>
+          <div style="font-size: 12px; color: {{t.sub}}">Logistics · $4.2M · renews 74d</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px; padding: 12px; background: {{t.well}}; border-radius: 12px">
+        <div style="font-size: 48px; font-weight: 800; color: {{t.crit}}; line-height: 1">42</div>
+        <div style="display: flex; flex-direction: column; gap: 2px">
+          <div style="font-size: 13px; font-weight: 700">PULSE</div>
+          <div style="font-size: 12px; color: {{t.crit}}">▼ 18 in 24h</div>
+        </div>
+      </div>
+      <div style="border: 1px solid {{t.line}}; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 6px">
+        <div style="display: flex; justify-content: space-between; font-size: 11px; color: {{t.faint}}"><span>CASE 00481233</span><span>SEV1 · 2h14m</span></div>
+        <div style="font-family: Inter, sans-serif; font-size: 14px; font-weight: 600">Shipment-label API returning 503s</div>
+        <div style="font-size: 12px; color: {{t.crit}}; font-weight: 700">NEXT UPDATE IN 0:48</div>
+      </div>
+      <div style="background: {{t.band}}; color: {{t.bandText}}; border-left: 0; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 4px; outline: 1px solid {{t.crit}}">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em">● LIVE · INC-2291</div>
+        <div style="font-family: Inter, sans-serif; font-size: 13px; color: #ECE3D8">DB failover degraded us-east-2: 3 of their 5 services affected</div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; text-align: center">
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 800; font-size: 15px">3.1</span><span style="font-size: 10px; color: {{t.faint}}">CSAT</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 800; font-size: 15px">7</span><span style="font-size: 10px; color: {{t.faint}}">CASES</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 800; font-size: 15px">99.6</span><span style="font-size: 10px; color: {{t.faint}}">UPTIME</span></div>
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 800; font-size: 15px">81%</span><span style="font-size: 10px; color: {{t.faint}}">ADOPT</span></div>
+      </div>
+      <div style="font-family: Inter, sans-serif; font-size: 13px; padding-top: 10px; border-top: 1px solid {{t.line}}"><b style="color: {{t.accent}}">Next move:</b> exec call with CTO before the 15:00 update</div>
+
+      <sc-for list="{{pins}}" as="p" hint-placeholder-count="6">
+        <span style="position: absolute; left: -16px; top: {{p.top}}; width: 28px; height: 28px; border-radius: 50%; background: {{t.accent}}; color: {{t.onAccent}}; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{p.n}}</span>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 18px; width: 390px; flex-shrink: 0">
+      <h2 style="margin: 0; font-size: 22px; color: {{t.amber}}">// card anatomy</h2>
+      <sc-for list="{{anatomy}}" as="a" hint-placeholder-count="6">
+        <div style="display: flex; gap: 14px">
+          <span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 50%; background: {{t.accent}}; color: {{t.onAccent}}; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center">{{a.n}}</span>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-weight: 700; font-size: 14px">{{a.title}}</div>
+            <div style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.5; color: {{t.sub}}">{{a.body}}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 16px; flex: 1; min-width: 0">
+      <h2 style="margin: 0; font-size: 22px; color: {{t.amber}}">// four zoom levels</h2>
+      <p style="margin: 0; font-family: Inter, sans-serif; font-size: 14px; line-height: 1.5; color: {{t.sub}}">One object with progressive depth. Each role lands on a default level and can always zoom in, never out of context.</p>
+      <sc-for list="{{levels}}" as="l" hint-placeholder-count="4">
+        <div style="display: flex; gap: 14px; align-items: stretch; background: {{t.panel}}; border: 1px solid {{t.line}}; border-radius: 14px; padding: 14px">
+          <div style="width: 52px; flex-shrink: 0; border-radius: 10px; background: {{t.well}}; color: {{t.amber}}; font-weight: 800; font-size: 15px; display: flex; align-items: center; justify-content: center">{{l.code}}</div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <div style="font-weight: 700; font-size: 14px">{{l.name}}</div>
+            <div style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.45; color: {{t.sub}}">{{l.body}}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="margin: 0; font-size: 22px; color: {{t.amber}}">// who sees what</h2>
+    <div style="border: 1px solid {{t.line}}; border-radius: 14px; overflow: hidden; background: {{t.panel}}">
+      <div style="display: grid; grid-template-columns: 150px 96px 250px 1fr 210px 140px; background: {{t.well}}; color: {{t.amber}}; font-size: 11px; font-weight: 700; letter-spacing: 0.08em">
+        <div style="padding: 11px 14px">ROLE</div>
+        <div style="padding: 11px 14px">LEVEL</div>
+        <div style="padding: 11px 14px">THE QUESTION</div>
+        <div style="padding: 11px 14px">THE CARD LEADS WITH</div>
+        <div style="padding: 11px 14px">COLLAPSED</div>
+        <div style="padding: 11px 14px">BEST STYLE</div>
+      </div>
+      <sc-for list="{{matrix}}" as="r" hint-placeholder-count="6">
+        <div style="display: grid; grid-template-columns: 150px 96px 250px 1fr 210px 140px; font-family: Inter, sans-serif; font-size: 13px; line-height: 1.45; border-top: 1px solid {{t.line}}">
+          <div style="padding: 10px 14px; font-weight: 700; font-family: 'JetBrains Mono', monospace">{{r.role}}</div>
+          <div style="padding: 10px 14px; font-family: 'JetBrains Mono', monospace; color: {{t.amber}}">{{r.level}}</div>
+          <div style="padding: 10px 14px">{{r.q}}</div>
+          <div style="padding: 10px 14px; color: {{t.sub}}">{{r.shows}}</div>
+          <div style="padding: 10px 14px; color: {{t.faint}}">{{r.hides}}</div>
+          <div style="padding: 10px 14px; font-weight: 700; color: {{t.accent}}; font-family: 'JetBrains Mono', monospace">{{r.style}}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+  theme() {
+    const T = {
+      dark: { bg: '#02050B', panel: '#090D14', raised: '#0F1319', well: '#1b1e23', line: '#2A2E35', text: '#ECE3D8', sub: '#BDB1A3', faint: '#93969C', amber: '#FC7B00', accent: '#7698FF', onAccent: '#02050B', crit: '#F9780C', onCrit: '#02050B', high: '#DD8834', watch: '#B8865A', ok: '#7698FF', band: '#1b1e23', bandText: '#FD9C40', shadow: '0 24px 60px rgba(0,0,0,0.7)', toggle: 'Light mode' },
+      light: { bg: '#F2ECE4', panel: '#FBF8F3', raised: '#FFFFFF', well: '#EAE2D7', line: '#D9CFC2', text: '#1b1e23', sub: '#4A4540', faint: '#6B655E', amber: '#A64A00', accent: '#2F55B0', onAccent: '#FFFFFF', crit: '#B04F00', onCrit: '#FFFFFF', high: '#9A5418', watch: '#7D4317', ok: '#2F55B0', band: '#1b1e23', bandText: '#FD9C40', shadow: '0 18px 40px rgba(60,40,20,0.14)', toggle: 'Dark mode' }
+    };
+    const mode = (this.state && this.state.mode) || this.props.theme || 'dark';
+    return { mode, t: T[mode] || T.dark };
+  }
+  renderVals() {
+    const { mode, t } = this.theme();
+    return {
+      t,
+      toggle: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' }),
+      legend: [
+        { label: 'CRITICAL', bg: t.crit, fg: t.onCrit, bs: 'solid', bd: t.crit },
+        { label: 'HIGH', bg: 'transparent', fg: t.high, bs: 'solid', bd: t.high },
+        { label: 'WATCH', bg: 'transparent', fg: t.watch, bs: 'dashed', bd: t.watch },
+        { label: 'HEALTHY', bg: 'transparent', fg: t.ok, bs: 'solid', bd: t.ok }
+      ],
+      pins: [64, 152, 244, 336, 404, 464].map((y, i) => ({ n: String(i + 1), top: y + 'px' })),
+      anatomy: [
+        { n: '1', title: 'Identity strip (Salesforce)', body: 'Account name, tier and entitlement, industry, ARR, renewal countdown. Frame weight shows overall risk.' },
+        { n: '2', title: 'Pulse score', body: 'One 0–100 rating built from case severity, incident exposure, CSAT trend and how close renewal is. The delta shows direction.' },
+        { n: '3', title: 'Active case', body: 'Highest-severity open case: number, age, SLA clock, next promised update. Always shown while a Sev1 or Sev2 is open.' },
+        { n: '4', title: 'Live operational risk', body: 'Incidents, maintenance or degradations mapped to this customer’s services and regions. Outlined band so it cannot be missed.' },
+        { n: '5', title: 'Stat line', body: 'Four stats chosen for the viewer’s role, like the numbers on a sports card.' },
+        { n: '6', title: 'Next move', body: 'One recommended action for this viewer, with an owner. Drives action, not just awareness.' }
+      ],
+      levels: [
+        { code: 'L0', name: 'Chip — portfolio tile', body: 'Name, pulse, risk treatment, live-incident marker. 50+ customers on one screen.' },
+        { code: 'L1', name: 'Card front — the headline', body: 'The anatomy on the left. Answers “are they OK, and if not, why?” in five seconds.' },
+        { code: 'L2', name: 'Card back — the stats', body: 'History, case list, contacts, opportunity, SLOs for their services. Flip or press F.' },
+        { code: 'L3', name: 'Dossier — the working view', body: 'Timeline, blast-radius map, linked traces, runbooks, comms log. Where the work happens.' }
+      ],
+      matrix: [
+        { role: 'Executives', level: 'L0→L1', q: 'Which top accounts are at risk, and how much revenue is exposed?', shows: 'Pulse, ARR at risk, renewal countdown, Sev1 count, exec sponsor, one-line why', hides: 'Case numbers, technical detail, SLA clocks', style: 'C Roster' },
+        { role: 'Account teams', level: 'L1→L2', q: 'What do I tell this customer today?', shows: 'Open cases in plain language, sentiment trend, opportunity stage, comms already sent, talking points', hides: 'Traces, deploys, error budgets', style: 'A Card' },
+        { role: 'Service owners', level: 'L1/svc', q: 'Which customers is my service hurting right now?', shows: 'Service SLOs as the scoreboard, impacted customers ranked by tier and ARR, linked cases', hides: 'Renewal and opportunity detail', style: 'B Board' },
+        { role: 'Key leaders', level: 'L0→L1', q: 'Where do I put people and attention?', shows: 'Escalation level, SLA-breach countdowns, who is engaged, incidents spanning accounts', hides: 'Per-ticket text', style: 'B or C' },
+        { role: 'Engineers', level: 'L3', q: 'What is the technical blast radius for this customer?', shows: 'Affected services and regions, deploy correlation, error signatures, traces, runbook', hides: 'ARR, renewal, sentiment', style: 'D Dossier' },
+        { role: 'Support', level: 'L2→L3', q: 'What have we promised, and what is next?', shows: 'Case timeline, SLA clock, entitlements, last contact, linked incident, known workaround', hides: 'Opportunity, revenue', style: 'A back / D' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

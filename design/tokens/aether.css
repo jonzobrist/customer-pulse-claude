@@ -1,0 +1,59 @@
+/* Customer Pulse tokens — Omarchy "Aether" theme (checked-in fallback).
+   Regenerate from the live theme with scripts/omarchy-theme-to-css.sh.
+   Contrast: every text token >= 4.5:1 on --cp-bg / --cp-raised in its theme. */
+:root, :root[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #02050B;
+  --cp-panel: #090D14;
+  --cp-raised: #0F1319;
+  --cp-well: #1b1e23;
+  --cp-line: #2A2E35;
+  --cp-text: #ECE3D8;
+  --cp-sub: #BDB1A3;
+  --cp-faint: #93969C;
+  --cp-brand: #FC7B00;
+  --cp-brand-hi: #FD9C40;
+  --cp-accent: #7698FF;
+  --cp-accent-dim: #5577c9;
+  --cp-on-accent: #02050B;
+  --cp-critical: #F9780C;
+  --cp-on-critical: #02050B;
+  --cp-high: #DD8834;
+  --cp-watch: #B8865A;
+  --cp-healthy: #7698FF;
+  --cp-band: #1b1e23;
+  --cp-band-text: #FD9C40;
+  --cp-shadow: 0 24px 60px rgb(0 0 0 / 0.7);
+  --cp-font-ui: "JetBrainsMono Nerd Font", "JetBrains Mono", ui-monospace, monospace;
+  --cp-font-prose: Inter, system-ui, sans-serif;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --cp-bg: #F2ECE4;
+  --cp-panel: #FBF8F3;
+  --cp-raised: #FFFFFF;
+  --cp-well: #EAE2D7;
+  --cp-line: #D9CFC2;
+  --cp-text: #1b1e23;
+  --cp-sub: #4A4540;
+  --cp-faint: #6B655E;
+  --cp-brand: #A64A00;
+  --cp-brand-hi: #9A4500;
+  --cp-accent: #2F55B0;
+  --cp-accent-dim: #5577c9;
+  --cp-on-accent: #FFFFFF;
+  --cp-critical: #B04F00;
+  --cp-on-critical: #FFFFFF;
+  --cp-high: #9A5418;
+  --cp-watch: #7D4317;
+  --cp-healthy: #2F55B0;
+  --cp-band: #1b1e23;
+  --cp-band-text: #FD9C40;
+  --cp-shadow: 0 18px 40px rgb(60 40 20 / 0.14);
+}
+
+/* Status treatments: never hue alone. */
+.cp-status--critical { background: var(--cp-critical); color: var(--cp-on-critical); border: 1.5px solid var(--cp-critical); }
+.cp-status--high     { background: transparent; color: var(--cp-high); border: 1.5px solid var(--cp-high); }
+.cp-status--watch    { background: transparent; color: var(--cp-watch); border: 1.5px dashed var(--cp-watch); }
+.cp-status--healthy  { background: transparent; color: var(--cp-healthy); border: 1.5px solid var(--cp-healthy); }

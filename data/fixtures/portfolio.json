@@ -1,0 +1,1611 @@
+{
+  "scenarioTime": "2026-11-10T22:12:00Z",
+  "note": "Fictional scenario matching the design mockups. Halcyon Freight is the hero account.",
+  "accounts": [
+    {
+      "id": "001HF0000000000000",
+      "name": "Halcyon Freight",
+      "monogram": "HF",
+      "industry": "Logistics",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 4200000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-01-23T22:12:00Z",
+        "stage": "Negotiation"
+      },
+      "owners": {
+        "ae": "M. Okafor",
+        "csm": "R. Lindqvist"
+      },
+      "csat90d": {
+        "score": 3.1,
+        "delta": -0.6
+      },
+      "adoptionPct": 81,
+      "contacts": [
+        {
+          "name": "Ops lead",
+          "role": "opsLead",
+          "preferredChannel": "phone"
+        },
+        {
+          "name": "CTO",
+          "role": "execSponsor",
+          "lastTouch": "2026-09-30T22:12:00Z"
+        }
+      ],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "hf-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "labels-api",
+          "rates-api",
+          "tracking-ws",
+          "auth",
+          "billing"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000001",
+      "name": "Atlas Retail",
+      "monogram": "AR",
+      "industry": "Retail",
+      "tier": "T2",
+      "entitlement": {
+        "name": "Standard",
+        "sev1ResponseMins": 60,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 1600000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2026-12-18T22:12:00Z",
+        "stage": "Negotiation"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.4,
+        "delta": 0
+      },
+      "adoptionPct": 59,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "ar-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "checkout-api",
+          "labels-api",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000002",
+      "name": "Copperline Bank",
+      "monogram": "CB",
+      "industry": "Financial services",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 3800000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-06-10T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.4,
+        "delta": 0
+      },
+      "adoptionPct": 61,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "cb-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "ledger-api",
+          "labels-api",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000003",
+      "name": "Meridian Health",
+      "monogram": "MH",
+      "industry": "Healthcare",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 2900000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-01-10T22:12:00Z",
+        "stage": "Negotiation"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.6,
+        "delta": 0
+      },
+      "adoptionPct": 68,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "mh-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "labels-api",
+          "tracking-ws",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000004",
+      "name": "Northgate Media",
+      "monogram": "NM",
+      "industry": "Media",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 2100000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-09-06T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.6,
+        "delta": 0
+      },
+      "adoptionPct": 72,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "nm-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "cdn",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000005",
+      "name": "Ferro Mobility",
+      "monogram": "FM",
+      "industry": "Transport",
+      "tier": "T2",
+      "entitlement": {
+        "name": "Standard",
+        "sev1ResponseMins": 60,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 1100000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-03-30T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.7,
+        "delta": 0
+      },
+      "adoptionPct": 73,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "fm-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "rates-api",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000006",
+      "name": "Bluepeak Energy",
+      "monogram": "BE",
+      "industry": "Energy",
+      "tier": "T2",
+      "entitlement": {
+        "name": "Standard",
+        "sev1ResponseMins": 60,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 900000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-02-06T22:12:00Z",
+        "stage": "Negotiation"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.7,
+        "delta": 0
+      },
+      "adoptionPct": 77,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "be-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "tracking-ws",
+          "billing"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000007",
+      "name": "Solano Insurance",
+      "monogram": "SI",
+      "industry": "Insurance",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 5400000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-05-19T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.8,
+        "delta": 0
+      },
+      "adoptionPct": 82,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "si-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "ledger-api",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000008",
+      "name": "Quill & Vale",
+      "monogram": "QV",
+      "industry": "Retail",
+      "tier": "T3",
+      "entitlement": {
+        "name": "Standard",
+        "sev1ResponseMins": 60,
+        "hours": "business"
+      },
+      "arr": {
+        "amount": 400000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2026-12-25T22:12:00Z",
+        "stage": "Negotiation"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 4.8,
+        "delta": 0
+      },
+      "adoptionPct": 81,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "qv-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "labels-api"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000009",
+      "name": "Kestrel Airlines",
+      "monogram": "KA",
+      "industry": "Aviation",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 6800000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-07-28T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 5.0,
+        "delta": 0
+      },
+      "adoptionPct": 91,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "ka-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "rates-api",
+          "tracking-ws",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000010",
+      "name": "Orbis Telecom",
+      "monogram": "OT",
+      "industry": "Telecom",
+      "tier": "T1",
+      "entitlement": {
+        "name": "Premier 24/7",
+        "sev1ResponseMins": 15,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 4900000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-04-09T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 5.1,
+        "delta": 0
+      },
+      "adoptionPct": 95,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "ot-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "cdn",
+          "billing",
+          "auth"
+        ]
+      }
+    },
+    {
+      "id": "001HF0000000000011",
+      "name": "Larkspur Foods",
+      "monogram": "LF",
+      "industry": "Food & beverage",
+      "tier": "T2",
+      "entitlement": {
+        "name": "Standard",
+        "sev1ResponseMins": 60,
+        "hours": "24x7"
+      },
+      "arr": {
+        "amount": 1200000,
+        "currency": "USD"
+      },
+      "renewal": {
+        "date": "2027-03-10T22:12:00Z",
+        "stage": "Planned"
+      },
+      "owners": {},
+      "csat90d": {
+        "score": 5.2,
+        "delta": 0
+      },
+      "adoptionPct": 95,
+      "contacts": [],
+      "footprint": {
+        "tenants": [
+          {
+            "id": "lf-prod-01",
+            "region": "us-east-2",
+            "cell": "use2-c"
+          }
+        ],
+        "services": [
+          "labels-api",
+          "billing"
+        ]
+      }
+    }
+  ],
+  "pulses": [
+    {
+      "accountId": "001HF0000000000000",
+      "score": 42,
+      "delta24h": -18,
+      "verdict": "critical",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 72,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 70,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 74,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 71,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 63,
+          "hadIncident": true
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 66,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 69,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 68,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 65,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 60,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 58,
+          "hadIncident": true
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 42,
+          "hadIncident": true
+        }
+      ],
+      "attributes": {
+        "stability": 38,
+        "sentiment": 55,
+        "adoption": 81,
+        "supportLoad": 27,
+        "revenue": 92,
+        "renewal": 61
+      },
+      "breakdown": [
+        {
+          "factor": "Sev1 open (Tier 1 ×1.2)",
+          "penalty": 24,
+          "detail": "Case 00481233"
+        },
+        {
+          "factor": "Sev2 open",
+          "penalty": 6,
+          "detail": "1 case"
+        },
+        {
+          "factor": "Sev3 open",
+          "penalty": 2,
+          "detail": "2 cases"
+        },
+        {
+          "factor": "Live event footprint",
+          "penalty": 9,
+          "detail": "INC-2291 hits 3 of 5 services (15 × 0.6)"
+        },
+        {
+          "factor": "Milestone breach < 2h",
+          "penalty": 5,
+          "detail": "Resolution due in 1h12m"
+        },
+        {
+          "factor": "CSAT drop",
+          "penalty": 4,
+          "detail": "3.7 → 3.1"
+        },
+        {
+          "factor": "Renewal ≤ 90d (×1.15)",
+          "penalty": 7.5,
+          "detail": "74 days; subtotal 50 → 57.5"
+        }
+      ],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000001",
+      "score": 49,
+      "delta24h": -11,
+      "verdict": "high",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 45,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 52,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 50,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 48,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 46,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 53,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 51,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 49,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 47,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 45,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 52,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 49,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000002",
+      "score": 51,
+      "delta24h": -14,
+      "verdict": "high",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 47,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 54,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 52,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 50,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 48,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 55,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 53,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 51,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 49,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 47,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 54,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 51,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000003",
+      "score": 58,
+      "delta24h": -9,
+      "verdict": "high",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 54,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 61,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 59,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 57,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 55,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 62,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 60,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 58,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 56,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 54,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 61,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 58,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000004",
+      "score": 62,
+      "delta24h": -3,
+      "verdict": "watch",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 58,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 65,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 63,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 61,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 59,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 66,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 64,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 62,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 60,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 58,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 65,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 62,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000005",
+      "score": 63,
+      "delta24h": -6,
+      "verdict": "watch",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 59,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 66,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 64,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 62,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 60,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 67,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 65,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 63,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 61,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 59,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 66,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 63,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000006",
+      "score": 67,
+      "delta24h": -4,
+      "verdict": "watch",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 63,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 70,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 68,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 66,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 64,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 71,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 69,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 67,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 65,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 63,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 70,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 67,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000007",
+      "score": 72,
+      "delta24h": 2,
+      "verdict": "watch",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 68,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 75,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 73,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 71,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 69,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 76,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 74,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 72,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 70,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 68,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 75,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 72,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000008",
+      "score": 71,
+      "delta24h": -2,
+      "verdict": "watch",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 67,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 74,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 72,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 70,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 68,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 75,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 73,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 71,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 69,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 67,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 74,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 71,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000009",
+      "score": 81,
+      "delta24h": 4,
+      "verdict": "healthy",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 77,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 84,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 82,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 80,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 78,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 85,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 83,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 81,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 79,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 77,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 84,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 81,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000010",
+      "score": 86,
+      "delta24h": 1,
+      "verdict": "healthy",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 82,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 89,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 87,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 85,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 83,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 90,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 88,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 86,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 84,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 82,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 89,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 86,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    },
+    {
+      "accountId": "001HF0000000000011",
+      "score": 90,
+      "delta24h": 3,
+      "verdict": "healthy",
+      "history12w": [
+        {
+          "weekStart": "2026-08-25T22:12:00Z",
+          "score": 86,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-01T22:12:00Z",
+          "score": 93,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-08T22:12:00Z",
+          "score": 91,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-15T22:12:00Z",
+          "score": 89,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-22T22:12:00Z",
+          "score": 87,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-09-29T22:12:00Z",
+          "score": 94,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-06T22:12:00Z",
+          "score": 92,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-13T22:12:00Z",
+          "score": 90,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-20T22:12:00Z",
+          "score": 88,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-10-27T22:12:00Z",
+          "score": 86,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-03T22:12:00Z",
+          "score": 93,
+          "hadIncident": false
+        },
+        {
+          "weekStart": "2026-11-10T22:12:00Z",
+          "score": 90,
+          "hadIncident": false
+        }
+      ],
+      "breakdown": [],
+      "weightsVersion": "v1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "500HF0001",
+      "number": "00481233",
+      "accountId": "001HF0000000000000",
+      "severity": "S1",
+      "subject": "Shipment-label API returning 503s",
+      "customerQuote": "Warehouses in NJ and PA can't print labels. Trucks leave at 17:00.",
+      "openedAt": "2026-11-10T21:31:00Z",
+      "status": "working",
+      "nextUpdateDue": "2026-11-10T23:00:00Z",
+      "nextUpdateChannel": "phone",
+      "resolutionDue": "2026-11-10T23:24:00Z",
+      "lastContactAt": "2026-11-10T22:05:00Z",
+      "linkedEventIds": [
+        "INC-2291"
+      ],
+      "workaroundKb": "KB-1182",
+      "escalationLevel": 2
+    },
+    {
+      "id": "500HF0002",
+      "number": "00479810",
+      "accountId": "001HF0000000000000",
+      "severity": "S2",
+      "subject": "Rate quotes slow in EU tenant",
+      "openedAt": "2026-11-07T15:00:00Z",
+      "status": "waitingOnUs",
+      "linkedEventIds": []
+    },
+    {
+      "id": "500HF0003",
+      "number": "00478022",
+      "accountId": "001HF0000000000000",
+      "severity": "S3",
+      "subject": "SSO group sync missing users",
+      "openedAt": "2026-11-04T10:00:00Z",
+      "status": "working",
+      "linkedEventIds": []
+    },
+    {
+      "id": "500HF0004",
+      "number": "00476455",
+      "accountId": "001HF0000000000000",
+      "severity": "S3",
+      "subject": "Webhook retries duplicating events",
+      "openedAt": "2026-11-01T10:00:00Z",
+      "status": "waitingOnCustomer",
+      "linkedEventIds": []
+    },
+    {
+      "id": "500CB0001",
+      "number": "00481260",
+      "accountId": "001HF0000000000002",
+      "severity": "S2",
+      "subject": "Label generation failures",
+      "openedAt": "2026-11-10T22:11:00Z",
+      "status": "new",
+      "linkedEventIds": [
+        "INC-2291"
+      ]
+    },
+    {
+      "id": "500AR0001",
+      "number": "00481101",
+      "accountId": "001HF0000000000001",
+      "severity": "S2",
+      "subject": "Checkout latency at peak",
+      "openedAt": "2026-11-09T18:00:00Z",
+      "status": "waitingOnUs",
+      "linkedEventIds": [
+        "INC-2291"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "INC-2291",
+      "kind": "incident",
+      "severity": "S1",
+      "title": "Database failover · us-east-2",
+      "startedAt": "2026-11-10T21:58:00Z",
+      "regions": [
+        "us-east-2"
+      ],
+      "services": [
+        "labels-api",
+        "tracking-ws",
+        "rates-api"
+      ],
+      "rootCause": {
+        "service": "pg-use2-primary",
+        "summary": "Primary failover; replicas lag 40s"
+      },
+      "commander": "assigned",
+      "channel": "#inc-2291",
+      "nextCommsAt": "2026-11-10T23:00:00Z",
+      "statusPage": {
+        "state": "degraded",
+        "updatedAt": "2026-11-10T22:05:00Z"
+      }
+    }
+  ],
+  "serviceHealth": [
+    {
+      "service": "labels-api",
+      "errorRate": 0.048,
+      "p99Ms": 2800,
+      "sloTarget": 0.999,
+      "burnRate": 6.2,
+      "budgetRemaining": 0.31,
+      "dependencies": [
+        "pg-use2-primary",
+        "redis-use2"
+      ],
+      "state": "failing"
+    },
+    {
+      "service": "rates-api",
+      "errorRate": 0.004,
+      "p99Ms": 2800,
+      "sloTarget": 0.999,
+      "burnRate": 2.1,
+      "budgetRemaining": 0.62,
+      "dependencies": [
+        "pg-use2-replicas"
+      ],
+      "state": "degraded"
+    },
+    {
+      "service": "tracking-ws",
+      "errorRate": 0.09,
+      "p99Ms": 900,
+      "sloTarget": 0.995,
+      "burnRate": 4.0,
+      "budgetRemaining": 0.44,
+      "dependencies": [
+        "pg-use2-primary"
+      ],
+      "state": "failing"
+    },
+    {
+      "service": "auth",
+      "errorRate": 0.0002,
+      "p99Ms": 120,
+      "sloTarget": 0.9995,
+      "burnRate": 0.3,
+      "budgetRemaining": 0.91,
+      "dependencies": [
+        "redis-use2"
+      ],
+      "state": "ok"
+    },
+    {
+      "service": "billing",
+      "errorRate": 0.0001,
+      "p99Ms": 200,
+      "sloTarget": 0.999,
+      "burnRate": 0.1,
+      "budgetRemaining": 0.95,
+      "dependencies": [],
+      "state": "ok"
+    },
+    {
+      "service": "pg-use2-primary",
+      "errorRate": 0,
+      "p99Ms": 0,
+      "sloTarget": 0.9999,
+      "burnRate": 0,
+      "budgetRemaining": 0.2,
+      "dependencies": [],
+      "state": "failedOver"
+    }
+  ],
+  "timeline": {
+    "001HF0000000000000": [
+      {
+        "at": "2026-11-10T20:50:00Z",
+        "kind": "change",
+        "text": "CHG-8812 pg minor version upgrade, use2 replicas",
+        "ref": "CHG-8812"
+      },
+      {
+        "at": "2026-11-10T21:22:00Z",
+        "kind": "deploy",
+        "text": "labels-api v2.41.0 to use2 (connection pool change)",
+        "ref": "labels-api@2.41.0"
+      },
+      {
+        "at": "2026-11-10T21:31:00Z",
+        "kind": "case",
+        "text": "Case 00481233 opened by ops lead (phone)",
+        "ref": "00481233"
+      },
+      {
+        "at": "2026-11-10T21:44:00Z",
+        "kind": "alert",
+        "text": "labels-api 5xx above 2% for tenant hf-prod-01"
+      },
+      {
+        "at": "2026-11-10T21:58:00Z",
+        "kind": "incident",
+        "text": "INC-2291 declared · primary DB failover",
+        "ref": "INC-2291"
+      },
+      {
+        "at": "2026-11-10T22:05:00Z",
+        "kind": "comms",
+        "text": "Status page set to Degraded; customer emailed"
+      },
+      {
+        "at": "2026-11-10T22:11:00Z",
+        "kind": "case",
+        "text": "Copperline Bank Sev2 linked to INC-2291",
+        "ref": "00481260"
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-10T23:55:00Z"
+  },
+  "title": "Customer Pulse Cards",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1400,
+      "title": "Concept, card anatomy & persona matrix",
+      "is_interactive": true
+    },
+    "PersonaLadder.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1840,
+      "h": 1000,
+      "title": "One customer, six lenses",
+      "is_interactive": true
+    },
+    "StyleA_TradingCard.dc.html": {
+      "x": 0,
+      "y": 1780,
+      "w": 1440,
+      "h": 900,
+      "title": "Style A \u2014 Trading Card (account & support)",
+      "is_interactive": true
+    },
+    "StyleB_Scoreboard.dc.html": {
+      "x": 1520,
+      "y": 1780,
+      "w": 1440,
+      "h": 820,
+      "title": "Style B \u2014 Live Scoreboard (service owners & leaders)",
+      "is_interactive": true
+    },
+    "StyleC_Roster.dc.html": {
+      "x": 0,
+      "y": 2800,
+      "w": 1440,
+      "h": 980,
+      "title": "Style C \u2014 Roster Board (executives)",
+      "is_interactive": true
+    },
+    "StyleD_Dossier.dc.html": {
+      "x": 1520,
+      "y": 2800,
+      "w": 1440,
+      "h": 900,
+      "title": "Style D \u2014 Field Dossier (engineers & support)",
+      "is_interactive": true
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "PersonaLadder.dc.html",
+    "StyleA_TradingCard.dc.html",
+    "StyleB_Scoreboard.dc.html",
+    "StyleC_Roster.dc.html",
+    "StyleD_Dossier.dc.html"
+  ],
+  "notes": {
+    "t1": {
+      "x": 0,
+      "y": -300,
+      "text": "Customer Pulse \u2014 concept & information levels",
+      "kind": "title1",
+      "maxW": 3360
+    },
+    "t2": {
+      "x": 0,
+      "y": 1500,
+      "text": "Four display styles",
+      "kind": "title1",
+      "maxW": 2960
+    }
+  },
+  "designSystems": []
+}

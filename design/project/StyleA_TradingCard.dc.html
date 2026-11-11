@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Style A Trading Card</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7698FF}a:hover{color:#9DB4FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 48px 56px; background: {{t.bg}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; display: flex; gap: 48px">
+
+  <div style="display: flex; flex-direction: column; gap: 14px; align-items: center">
+    <span style="font-size: 12px; color: {{t.faint}}; letter-spacing: 0.12em">FRONT · L1</span>
+    <div style="width: 400px; height: 660px; box-sizing: border-box; border-radius: 26px; background: {{frame}}; padding: 8px; box-shadow: {{t.shadow}}">
+      <div style="width: 100%; height: 100%; box-sizing: border-box; border-radius: 19px; background: {{t.raised}}; display: flex; flex-direction: column; overflow: hidden">
+        <div style="padding: 12px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid {{t.line}}">
+          <span style="font-size: 11px; letter-spacing: 0.1em; color: {{t.faint}}">TIER 1 · PREMIER · #014</span>
+          <span style="padding: 3px 9px; border-radius: 999px; background: {{t.crit}}; color: {{t.onCrit}}; font-size: 10px; font-weight: 800; letter-spacing: 0.08em">CRITICAL</span>
+        </div>
+        <div style="position: relative; height: 210px; box-sizing: border-box; padding: 18px; display: flex; align-items: flex-end; background-color: {{t.well}}; background-image: repeating-linear-gradient(0deg, {{t.grid}} 0 1px, transparent 1px 22px), repeating-linear-gradient(90deg, {{t.grid}} 0 1px, transparent 1px 22px)">
+          <div style="position: absolute; top: 18px; left: 18px; width: 86px; height: 86px; border-radius: 20px; background: {{t.bg}}; border: 2px solid {{t.amber}}; color: {{t.amber}}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 32px">HF</div>
+          <div style="position: absolute; top: 18px; right: 18px; width: 108px; height: 108px; border-radius: 50%; background: {{t.bg}}; border: 6px solid {{frame}}; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
+            <span style="font-weight: 800; font-size: 40px; line-height: 1; color: {{t.crit}}">42</span>
+            <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; color: {{t.faint}}">PULSE</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span style="font-size: 28px; font-weight: 800; line-height: 1; color: {{t.text}}">Halcyon Freight</span>
+            <span style="font-family: Inter, sans-serif; font-size: 13px; color: {{t.sub}}">Logistics · Chicago · customer since 2019</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid {{t.line}}">
+          <div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; border-right: 1px solid {{t.line}}"><span style="font-size: 10px; color: {{t.faint}}; font-weight: 700; letter-spacing: 0.1em">ARR</span><span style="font-size: 19px; font-weight: 800">$4.2M</span></div>
+          <div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; border-right: 1px solid {{t.line}}"><span style="font-size: 10px; color: {{t.faint}}; font-weight: 700; letter-spacing: 0.1em">RENEWS</span><span style="font-size: 19px; font-weight: 800">74d</span></div>
+          <div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 10px; color: {{t.faint}}; font-weight: 700; letter-spacing: 0.1em">24H</span><span style="font-size: 19px; font-weight: 800; color: {{t.crit}}">▼ 18</span></div>
+        </div>
+        <div style="padding: 14px 18px; display: flex; flex-direction: column; gap: 9px">
+          <sc-for list="{{attrs}}" as="a" hint-placeholder-count="6">
+            <div style="display: grid; grid-template-columns: 104px minmax(0, 1fr) 28px; gap: 10px; align-items: center; font-size: 11px">
+              <span style="font-weight: 700; color: {{t.sub}}; letter-spacing: 0.04em">{{a.name}}</span>
+              <div style="height: 8px; border-radius: 4px; background: {{t.well}}; overflow: hidden"><div style="height: 100%; width: {{a.w}}; background: {{a.color}}; border-radius: 4px"></div></div>
+              <span style="font-weight: 800; text-align: right">{{a.v}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin: 0 14px; border-radius: 12px; border: 1px solid {{t.line}}; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px">
+          <div style="display: flex; justify-content: space-between; font-size: 10px; color: {{t.faint}}; letter-spacing: 0.06em"><span>CASE 00481233 · SEV1</span><span style="color: {{t.crit}}; font-weight: 800">UPDATE IN 0:48</span></div>
+          <span style="font-family: Inter, sans-serif; font-size: 14px; font-weight: 600">Shipment-label API returning 503s</span>
+        </div>
+        <div style="margin: 10px 14px 14px; border-radius: 12px; background: {{t.band}}; border: 1px solid {{t.crit}}; padding: 10px 12px; display: flex; gap: 10px; align-items: center">
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: {{t.crit}}; flex-shrink: 0"></span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.35; color: #ECE3D8"><b style="font-family: 'JetBrains Mono', monospace; color: #FD9C40">INC-2291</b> DB failover, us-east-2 · 3 of 5 services hit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px; align-items: center">
+    <span style="font-size: 12px; color: {{t.faint}}; letter-spacing: 0.12em">BACK · L2 · PRESS F TO FLIP</span>
+    <div style="width: 400px; height: 660px; box-sizing: border-box; border-radius: 26px; background: {{frame}}; padding: 8px; box-shadow: {{t.shadow}}">
+      <div style="width: 100%; height: 100%; box-sizing: border-box; border-radius: 19px; background: {{t.raised}}; display: flex; flex-direction: column; gap: 14px; padding: 18px">
+        <div style="display: flex; justify-content: space-between; align-items: baseline">
+          <span style="font-size: 18px; font-weight: 800; color: {{t.amber}}">Season stats</span>
+          <span style="font-size: 10px; color: {{t.faint}}; letter-spacing: 0.1em">LAST 12 WEEKS</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 10px; font-weight: 700; color: {{t.faint}}; letter-spacing: 0.1em">PULSE BY WEEK</span>
+          <div style="height: 80px; display: flex; align-items: flex-end; gap: 5px; border-bottom: 1px solid {{t.line}}">
+            <sc-for list="{{weeks}}" as="w" hint-placeholder-count="12">
+              <div style="flex: 1; height: {{w.h}}; background: {{w.c}}; border-radius: 3px 3px 0 0"></div>
+            </sc-for>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 10px; color: {{t.faint}}"><span>AUG 18</span><span style="color: {{t.amber}}">■ incident week</span><span>NOW</span></div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid {{t.line}}; border-radius: 12px; overflow: hidden">
+          <sc-for list="{{sf}}" as="s" hint-placeholder-count="6">
+            <div style="padding: 8px 12px; border-bottom: 1px solid {{t.line}}; display: flex; flex-direction: column; gap: 2px"><span style="color: {{t.faint}}; font-size: 10px; letter-spacing: 0.06em">{{s.k}}</span><span style="font-family: Inter, sans-serif; font-weight: 600; font-size: 12px">{{s.v}}</span></div>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px">
+          <span style="font-size: 10px; font-weight: 700; color: {{t.faint}}; letter-spacing: 0.1em">OPEN CASES · 7</span>
+          <sc-for list="{{cases}}" as="c" hint-placeholder-count="4">
+            <div style="display: grid; grid-template-columns: 48px minmax(0, 1fr) 30px; gap: 8px; align-items: center; font-size: 12px">
+              <span style="font-weight: 800; font-size: 10px; padding: 3px 0; border-radius: 5px; text-align: center; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px {{c.bs}} {{c.bd}}">{{c.sev}}</span>
+              <span style="font-family: Inter, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{c.title}}</span>
+              <span style="color: {{t.faint}}; text-align: right">{{c.age}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 5px; font-family: Inter, sans-serif; font-size: 12px; border-top: 1px solid {{t.line}}; padding-top: 10px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: {{t.faint}}; letter-spacing: 0.1em">KEY CONTACTS</span>
+          <span><b>Ops lead</b> on the bridge, prefers phone</span>
+          <span><b>CTO</b> exec sponsor, last touch 41 days ago</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; padding-top: 4px">
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <span style="font-size: 12px; color: {{t.faint}}; letter-spacing: 0.12em">STYLE A</span>
+      <button onClick="{{toggle}}" aria-label="Toggle light and dark theme" style="height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid {{t.line}}; background: {{t.raised}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 10px"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"></path></svg>{{t.toggle}}</button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <h1 style="margin: 0; font-size: 42px; line-height: 1.05; font-weight: 800; color: {{t.amber}}">Trading Card</h1>
+      <p style="margin: 0; font-family: Inter, sans-serif; font-size: 15px; line-height: 1.55; color: {{t.sub}}">A collectible card: the front answers “how are they?”, the back answers “why?”. Built for account teams and support staff who own a few dozen customers and should know each one by heart.</p>
+    </div>
+    <sc-for list="{{notes}}" as="n" hint-placeholder-count="5">
+      <div style="display: flex; gap: 12px">
+        <span style="font-weight: 800; color: {{t.accent}}; font-size: 13px">{{n.k}}</span>
+        <div style="display: flex; flex-direction: column; gap: 3px">
+          <span style="font-weight: 700; font-size: 13px">{{n.t}}</span>
+          <span style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.5; color: {{t.sub}}">{{n.b}}</span>
+        </div>
+      </div>
+    </sc-for>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 10px; font-weight: 700; color: {{t.faint}}; letter-spacing: 0.12em">YOUR BINDER · L0 CHIPS</span>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{binder}}" as="b" hint-placeholder-count="6">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; background: {{b.bg}}; border: 2px {{b.bs}} {{b.bd}}">
+            <span style="font-weight: 800; font-size: 16px; color: {{b.fg}}">{{b.p}}</span>
+            <span style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; color: {{b.ink}}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{b.name}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"risk":{"editor":"enum","options":["critical","high","watch","healthy"],"default":"critical"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  theme() {
+    const T = {
+      dark: { bg: '#02050B', panel: '#090D14', raised: '#0F1319', well: '#1b1e23', line: '#2A2E35', grid: 'rgba(85,119,201,0.10)', text: '#ECE3D8', sub: '#BDB1A3', faint: '#93969C', amber: '#FC7B00', accent: '#7698FF', onAccent: '#02050B', crit: '#F9780C', onCrit: '#02050B', high: '#DD8834', watch: '#B8865A', ok: '#7698FF', muted: '#4A4E55', band: '#1b1e23', shadow: '0 24px 60px rgba(0,0,0,0.7)', toggle: 'Light mode' },
+      light: { bg: '#F2ECE4', panel: '#FBF8F3', raised: '#FFFFFF', well: '#EAE2D7', line: '#D9CFC2', grid: 'rgba(47,85,176,0.10)', text: '#1b1e23', sub: '#4A4540', faint: '#6B655E', amber: '#A64A00', accent: '#2F55B0', onAccent: '#FFFFFF', crit: '#B04F00', onCrit: '#FFFFFF', high: '#9A5418', watch: '#7D4317', ok: '#2F55B0', muted: '#B9AE9F', band: '#1b1e23', shadow: '0 18px 40px rgba(60,40,20,0.14)', toggle: 'Dark mode' }
+    };
+    const mode = (this.state && this.state.mode) || this.props.theme || 'dark';
+    return { mode, t: T[mode] || T.dark };
+  }
+  renderVals() {
+    const { mode, t } = this.theme();
+    const frames = { critical: t.crit, high: t.high, watch: t.watch, healthy: t.ok };
+    const frame = frames[this.props.risk ?? 'critical'] || t.crit;
+    const tone = (v) => v < 40 ? t.crit : v < 60 ? t.high : v < 75 ? t.watch : t.ok;
+    const attrs = [ ['STABILITY', 38], ['SENTIMENT', 55], ['ADOPTION', 81], ['SUPPORT LOAD', 27], ['REVENUE', 92], ['RENEWAL', 61] ]
+      .map(([name, v]) => ({ name, v, w: v + '%', color: tone(v) }));
+    const wk = [72, 70, 74, 71, 63, 66, 69, 68, 65, 60, 58, 42];
+    const hot = [4, 10, 11];
+    const weeks = wk.map((v, i) => ({ h: v + '%', c: hot.indexOf(i) >= 0 ? t.amber : t.muted }));
+    const sev = {
+      S1: { bg: t.crit, fg: t.onCrit, bs: 'solid', bd: t.crit },
+      S2: { bg: 'transparent', fg: t.high, bs: 'solid', bd: t.high },
+      S3: { bg: 'transparent', fg: t.watch, bs: 'dashed', bd: t.watch }
+    };
+    const chip = (name, p) => {
+      const lvl = p < 45 ? 'S1' : p < 60 ? 'S2' : p < 75 ? 'S3' : 'OK';
+      const s = lvl === 'OK' ? { bs: 'solid', bd: t.ok, fg: t.ok, bg: t.raised, ink: t.text } : lvl === 'S1' ? { bs: 'solid', bd: t.crit, fg: t.onCrit, bg: t.crit, ink: t.onCrit } : { bs: sev[lvl].bs, bd: sev[lvl].bd, fg: sev[lvl].fg, bg: t.raised, ink: t.text };
+      return { name, p, ...s };
+    };
+    return {
+      t, frame,
+      toggle: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' }),
+      attrs, weeks,
+      sf: [
+        { k: 'ACCOUNT OWNER', v: 'M. Okafor (AE)' }, { k: 'CSM', v: 'R. Lindqvist' },
+        { k: 'OPPORTUNITY', v: 'Renewal · Negotiation' }, { k: 'EXPANSION', v: '+2 SKUs · $610k' },
+        { k: 'ENTITLEMENT', v: 'Premier 24/7' }, { k: 'CSAT 90D', v: '3.1 / 5 (▼0.6)' }
+      ],
+      cases: [
+        { sev: 'SEV1', title: 'Shipment-label API returning 503s', age: '2h', ...sev.S1 },
+        { sev: 'SEV2', title: 'Rate quotes slow in EU tenant', age: '3d', ...sev.S2 },
+        { sev: 'SEV3', title: 'SSO group sync missing users', age: '6d', ...sev.S3 },
+        { sev: 'SEV3', title: 'Webhook retries duplicating events', age: '9d', ...sev.S3 }
+      ],
+      binder: [ chip('Halcyon Freight', 42), chip('Atlas Retail', 49), chip('Copperline Bank', 51), chip('Meridian Health', 58), chip('Ferro Mobility', 66), chip('Bluepeak Energy', 84) ],
+      notes: [
+        { k: '01', t: 'The frame is the verdict', b: 'Risk tier sets the frame (try the Risk tweak), so a binder reads at a glance. Strategic accounts get a second blue inner rule.' },
+        { k: '02', t: 'Six attribute bars', b: 'Stability, Sentiment, Adoption, Support load, Revenue, Renewal. Each 0–100; click one to see its formula and inputs.' },
+        { k: '03', t: 'Two strips that never hide', b: 'The top open case with its SLA clock, and the live incident band, stay on the front while they exist.' },
+        { k: '04', t: 'Flip for the season', b: 'The back has 12-week pulse with incident weeks marked, Salesforce fields, open cases and contacts. Same size, so grids stay aligned.' },
+        { k: '05', t: 'Follow to collect', b: 'Following a card adds it to your binder and sets alerts tuned to your role.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

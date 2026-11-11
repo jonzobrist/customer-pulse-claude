@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Style D Field Dossier</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7698FF}a:hover{color:#9DB4FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; background: {{t.bg}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; display: flex; flex-direction: column">
+
+  <div style="display: flex; align-items: center; gap: 18px; height: 60px; padding: 0 28px; border-bottom: 1px solid {{t.line}}; background: {{t.panel}}">
+    <span style="font-size: 12px; color: {{t.faint}}; letter-spacing: 0.12em">STYLE D · FIELD DOSSIER · L3</span>
+    <span style="color: {{t.muted}}">/</span>
+    <span style="font-weight: 800; color: {{t.amber}}">halcyon-freight</span>
+    <span style="color: {{t.muted}}">/</span>
+    <span style="font-weight: 700">case 00481233</span>
+    <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 5px; background: {{t.crit}}; color: {{t.onCrit}}">SEV1</span>
+    <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 5px; border: 1.5px solid {{t.crit}}; color: {{t.crit}}">● INC-2291</span>
+    <div style="margin-left: auto; display: flex; gap: 10px; align-items: center">
+      <span style="font-size: 12px; color: {{t.faint}}">viewing as <b style="color: {{t.text}}">engineer</b> · press <b style="color: {{t.accent}}">S</b> for support layout</span>
+      <button onClick="{{toggle}}" aria-label="Toggle light and dark theme" style="height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid {{t.line}}; background: {{t.raised}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"></path></svg>{{t.toggle}}</button>
+    </div>
+  </div>
+
+  <div style="flex: 1; display: grid; grid-template-columns: 300px minmax(0, 1fr) 330px; min-height: 0">
+
+    <div style="border-right: 1px solid {{t.line}}; padding: 22px; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; gap: 12px; align-items: center">
+        <div style="width: 52px; height: 52px; border-radius: 12px; border: 2px solid {{t.crit}}; color: {{t.amber}}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 19px">HF</div>
+        <div style="display: flex; flex-direction: column; gap: 3px">
+          <span style="font-weight: 800; font-size: 16px">Halcyon Freight</span>
+          <span style="font-size: 11px; color: {{t.faint}}">pulse <b style="color: {{t.crit}}">42 ▼18</b> · tier 1</span>
+        </div>
+      </div>
+
+      <div style="background: {{t.well}}; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px; border: 1px solid {{t.crit}}">
+        <span style="font-size: 10px; letter-spacing: 0.12em; color: {{t.faint}}; font-weight: 700">NEXT CUSTOMER UPDATE</span>
+        <span style="font-size: 46px; font-weight: 800; line-height: 1; color: {{t.crit}}">00:48</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.sub}}">Promised 15:00 by phone · resolution SLA breaches in 1h12m</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0">
+        <span style="font-size: 10px; letter-spacing: 0.12em; color: {{t.faint}}; font-weight: 700; padding-bottom: 6px">TENANT</span>
+        <sc-for list="{{tenant}}" as="k" hint-placeholder-count="6">
+          <div style="display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid {{t.line}}; font-size: 12px"><span style="color: {{t.faint}}">{{k.k}}</span><span style="font-weight: 700">{{k.v}}</span></div>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 10px; letter-spacing: 0.12em; color: {{t.faint}}; font-weight: 700">CUSTOMER SAID</span>
+        <span style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.5; color: {{t.sub}}; border-left: 2px solid {{t.line}}; padding-left: 10px">“Warehouses in NJ and PA can’t print labels. Trucks leave at 17:00. We need an ETA or a workaround.”</span>
+      </div>
+    </div>
+
+    <div style="padding: 22px 26px; display: flex; flex-direction: column; gap: 20px; min-width: 0">
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <span style="font-size: 15px; font-weight: 800; color: {{t.amber}}">// blast radius</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.faint}}">their tenant → their services → shared dependencies</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 170px 40px minmax(0, 1fr) 40px 220px; align-items: center; background: {{t.panel}}; border: 1px solid {{t.line}}; border-radius: 16px; padding: 20px">
+        <div style="border: 2px solid {{t.amber}}; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 4px">
+          <span style="font-weight: 800; font-size: 13px">hf-prod-01</span>
+          <span style="font-size: 11px; color: {{t.faint}}">cell use2-c</span>
+          <span style="font-size: 11px; color: {{t.crit}}; font-weight: 700">18k failed calls/hr</span>
+        </div>
+        <div style="height: 2px; background: {{t.line}}"></div>
+        <div style="display: flex; flex-direction: column; gap: 8px; border-left: 2px solid {{t.line}}; border-right: 2px solid {{t.line}}; padding: 0 14px">
+          <sc-for list="{{services}}" as="s" hint-placeholder-count="5">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 9px; border: 1.5px {{s.bs}} {{s.c}}; background: {{s.bg}}">
+              <span style="font-weight: 700; font-size: 12px">{{s.name}}</span>
+              <span style="font-size: 11px; font-weight: 700; color: {{s.c}}">{{s.stat}}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="height: 2px; background: {{t.line}}"></div>
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <sc-for list="{{deps}}" as="d" hint-placeholder-count="3">
+            <div style="padding: 10px 12px; border-radius: 10px; border: 2px {{d.bs}} {{d.c}}; background: {{d.bg}}; display: flex; flex-direction: column; gap: 3px">
+              <span style="font-weight: 800; font-size: 12px; color: {{d.fg}}">{{d.name}}</span>
+              <span style="font-size: 11px; color: {{d.sub}}">{{d.stat}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <span style="font-size: 15px; font-weight: 800; color: {{t.amber}}">// timeline</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.faint}}">deploys · alerts · case · incident · comms, merged</span>
+      </div>
+      <div style="display: flex; flex-direction: column; background: {{t.panel}}; border: 1px solid {{t.line}}; border-radius: 16px; padding: 8px 18px">
+        <sc-for list="{{timeline}}" as="e" hint-placeholder-count="7">
+          <div style="display: grid; grid-template-columns: 56px 84px minmax(0, 1fr); gap: 12px; align-items: center; padding: 8px 0; border-bottom: 1px solid {{t.line}}">
+            <span style="font-weight: 700; color: {{t.amber}}; font-size: 12px">{{e.at}}</span>
+            <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-align: center; padding: 3px 0; border-radius: 5px; border: 1.5px solid {{e.c}}; color: {{e.c}}">{{e.kind}}</span>
+            <span style="font-family: Inter, sans-serif; font-size: 13px">{{e.text}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="border-left: 1px solid {{t.line}}; padding: 22px; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 15px; font-weight: 800; color: {{t.amber}}">// next moves</span>
+        <sc-for list="{{todo}}" as="d" hint-placeholder-count="4">
+          <label style="display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 10px; background: {{t.raised}}; border: 1px solid {{t.line}}; font-family: Inter, sans-serif; font-size: 13px; line-height: 1.4; min-height: 44px; box-sizing: border-box">
+            <input type="checkbox" defaultChecked="{{d.done}}" style="margin-top: 2px; width: 16px; height: 16px; accent-color: #5577c9">
+            <span><b>{{d.who}}</b> {{d.what}}</span>
+          </label>
+        </sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 15px; font-weight: 800; color: {{t.amber}}">// linked</span>
+        <sc-for list="{{links}}" as="l" hint-placeholder-count="5">
+          <a href="#" style="display: flex; justify-content: space-between; align-items: center; min-height: 40px; padding: 0 12px; border-radius: 10px; border: 1px solid {{t.line}}; text-decoration: none; color: {{t.text}}; font-size: 12px"><span style="color: {{t.faint}}">{{l.k}}</span><span style="font-weight: 700; color: {{t.accent}}">{{l.v}} →</span></a>
+        </sc-for>
+      </div>
+      <div style="margin-top: auto; background: {{t.well}}; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 10px; letter-spacing: 0.12em; color: {{t.faint}}; font-weight: 700">HIDDEN IN THIS LENS</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; line-height: 1.5; color: {{t.sub}}">ARR, renewal, sentiment and opportunity. The support layout swaps the blast-radius map for the case thread and entitlements.</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  theme() {
+    const T = {
+      dark: { bg: '#02050B', panel: '#090D14', raised: '#0F1319', well: '#1b1e23', line: '#2A2E35', text: '#ECE3D8', sub: '#BDB1A3', faint: '#93969C', muted: '#5C6068', amber: '#FC7B00', accent: '#7698FF', onAccent: '#02050B', crit: '#F9780C', onCrit: '#02050B', critBg: 'rgba(249,120,12,0.12)', high: '#DD8834', watch: '#B8865A', ok: '#7698FF', toggle: 'Light mode' },
+      light: { bg: '#F2ECE4', panel: '#FBF8F3', raised: '#FFFFFF', well: '#EAE2D7', line: '#D9CFC2', text: '#1b1e23', sub: '#4A4540', faint: '#6B655E', muted: '#A69C8F', amber: '#A64A00', accent: '#2F55B0', onAccent: '#FFFFFF', crit: '#B04F00', onCrit: '#FFFFFF', critBg: 'rgba(176,79,0,0.08)', high: '#9A5418', watch: '#7D4317', ok: '#2F55B0', toggle: 'Dark mode' }
+    };
+    const mode = (this.state && this.state.mode) || this.props.theme || 'dark';
+    return { mode, t: T[mode] || T.dark };
+  }
+  renderVals() {
+    const { mode, t } = this.theme();
+    const hit = { c: t.crit, bs: 'solid', bg: t.critBg };
+    const slow = { c: t.high, bs: 'solid', bg: 'transparent' };
+    const fine = { c: t.ok, bs: 'solid', bg: 'transparent' };
+    const kinds = { DEPLOY: t.accent, ALERT: t.high, CASE: t.crit, INCIDENT: t.crit, COMMS: t.watch, CHANGE: t.accent };
+    return {
+      t,
+      toggle: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' }),
+      tenant: [
+        { k: 'region', v: 'us-east-2' }, { k: 'cell', v: 'use2-c' }, { k: 'plan', v: 'Premier 24/7' },
+        { k: 'api calls / day', v: '41M' }, { k: 'integrations', v: 'SAP, Okta' }, { k: '30d uptime', v: '99.62%' }
+      ],
+      services: [
+        { name: 'labels-api', stat: '503 · 31%', ...hit },
+        { name: 'rates-api', stat: 'p99 2.8s', ...slow },
+        { name: 'tracking-ws', stat: 'drops 9%', ...hit },
+        { name: 'auth', stat: 'ok', ...fine },
+        { name: 'billing', stat: 'ok', ...fine }
+      ],
+      deps: [
+        { name: 'pg-use2-primary', stat: 'FAILED OVER 13:58', c: t.crit, bs: 'solid', bg: t.crit, fg: t.onCrit, sub: t.onCrit },
+        { name: 'pg-use2-replicas', stat: 'lag 40s', c: t.high, bs: 'solid', bg: 'transparent', fg: t.text, sub: t.high },
+        { name: 'redis-use2', stat: 'ok', c: t.ok, bs: 'solid', bg: 'transparent', fg: t.text, sub: t.ok }
+      ],
+      timeline: [
+        { at: '14:11', kind: 'CASE', text: 'Copperline Bank Sev2 linked to INC-2291 (same signature)' },
+        { at: '14:05', kind: 'COMMS', text: 'Status page set to “Degraded”; customer emailed by support' },
+        { at: '13:58', kind: 'INCIDENT', text: 'INC-2291 declared · primary DB failover in us-east-2' },
+        { at: '13:44', kind: 'ALERT', text: 'labels-api 5xx above 2% for tenant hf-prod-01' },
+        { at: '13:31', kind: 'CASE', text: 'Case 00481233 opened by Halcyon ops lead (phone)' },
+        { at: '13:22', kind: 'DEPLOY', text: 'labels-api v2.41.0 to use2 (connection pool change)' },
+        { at: '12:50', kind: 'CHANGE', text: 'CHG-8812 pg minor version upgrade, use2 replicas' }
+      ].map((e) => ({ ...e, c: kinds[e.kind] })),
+      todo: [
+        { who: 'Eng', what: 'Rule lag vs v2.41 pool change in or out', done: false },
+        { who: 'Eng', what: 'Stage rollback of labels-api v2.41.0', done: true },
+        { who: 'Support', what: 'Send workaround KB-1182 (manual label batch)', done: false },
+        { who: 'IC', what: 'Post 15:00 update to customer + status page', done: false }
+      ],
+      links: [
+        { k: 'incident channel', v: '#inc-2291' }, { k: 'traces', v: '312 sampled' }, { k: 'runbook', v: 'RB-DB-07' },
+        { k: 'salesforce case', v: '00481233' }, { k: 'related cases', v: '5 on INC-2291' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

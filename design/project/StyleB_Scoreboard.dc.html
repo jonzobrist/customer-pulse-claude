@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Style B Live Scoreboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7698FF}a:hover{color:#9DB4FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 820px; box-sizing: border-box; background: {{t.bg}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; display: flex; flex-direction: column">
+
+  <div style="display: flex; align-items: stretch; height: 64px; background: {{t.panel}}; border-bottom: 2px solid {{t.crit}}">
+    <div style="display: flex; align-items: center; gap: 10px; padding: 0 22px; background: {{t.crit}}; color: {{t.onCrit}}; font-weight: 800; font-size: 16px; letter-spacing: 0.14em"><span style="width: 10px; height: 10px; border-radius: 50%; background: {{t.onCrit}}"></span>LIVE</div>
+    <div style="display: flex; align-items: center; gap: 14px; padding: 0 20px; border-right: 1px solid {{t.line}}; white-space: nowrap">
+      <span style="font-weight: 800; font-size: 18px; color: {{t.amber}}">INC-2291</span>
+      <span style="font-family: Inter, sans-serif; font-size: 15px; color: {{t.sub}}">Database failover · us-east-2</span>
+    </div>
+    <sc-for list="{{bug}}" as="b" hint-placeholder-count="3">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 0 18px; border-right: 1px solid {{t.line}}; white-space: nowrap"><span style="font-size: 11px; letter-spacing: 0.1em; color: {{t.faint}}">{{b.k}}</span><span style="font-weight: 800; font-size: 22px; color: {{b.c}}">{{b.v}}</span></div>
+    </sc-for>
+    <div style="margin-left: auto; display: flex; align-items: center; gap: 12px; padding: 0 16px">
+      <span style="font-weight: 700; font-size: 12px; padding: 7px 12px; border-radius: 8px; background: {{t.well}}; white-space: nowrap">Lens: service owner</span>
+      <button onClick="{{toggle}}" aria-label="Toggle light and dark theme" style="height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid {{t.line}}; background: {{t.raised}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 8px; white-space: nowrap"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"></path></svg>{{t.toggle}}</button>
+    </div>
+  </div>
+
+  <div style="flex: 1; display: flex; gap: 28px; padding: 28px 36px; min-height: 0">
+
+    <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between">
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <span style="font-size: 12px; color: {{t.faint}}; letter-spacing: 0.12em">STYLE B · LIVE SCOREBOARD · HOME TEAM</span>
+          <h1 style="margin: 0; font-size: 40px; line-height: 1; font-weight: 800; color: {{t.amber}}">Label Service</h1>
+        </div>
+        <span style="font-family: Inter, sans-serif; font-size: 14px; color: {{t.sub}}">Downstream victim · root cause: shared Postgres cluster</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: {{t.line}}; border: 1px solid {{t.line}}; border-radius: 16px; overflow: hidden">
+        <sc-for list="{{scores}}" as="s" hint-placeholder-count="5">
+          <div style="background: {{t.panel}}; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: {{t.faint}}">{{s.k}}</span>
+            <span style="font-size: 44px; font-weight: 800; line-height: 1; color: {{s.c}}">{{s.v}}</span>
+            <span style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.sub}}">{{s.n}}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: baseline">
+        <h2 style="margin: 0; font-size: 19px; font-weight: 800">On the field: customers your service is hurting</h2>
+        <span style="font-family: Inter, sans-serif; font-size: 13px; color: {{t.faint}}">Ranked by tier × ARR × calls failing · 14 total</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px">
+        <sc-for list="{{field}}" as="f" hint-placeholder-count="8">
+          <div style="background: {{t.raised}}; border-radius: 14px; border: 1px solid {{t.line}}; border-top: 5px {{f.bs}} {{f.c}}; padding: 14px; display: flex; flex-direction: column; gap: 8px">
+            <div style="display: flex; justify-content: space-between; align-items: center">
+              <span style="font-size: 24px; font-weight: 800; color: {{t.muted}}">#{{f.rank}}</span>
+              <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.08em; padding: 3px 7px; border-radius: 5px; background: {{f.chipBg}}; color: {{f.chipFg}}; border: 1.5px {{f.bs}} {{f.c}}">{{f.label}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px">
+              <span style="font-weight: 800; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{f.name}}</span>
+              <span style="font-size: 22px; font-weight: 800; color: {{f.c}}">{{f.pulse}}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: {{t.sub}}"><span>{{f.tier}}</span><span>{{f.arr}}</span></div>
+            <div style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.faint}}; border-top: 1px solid {{t.line}}; padding-top: 8px">{{f.case}}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 14px">
+      <div style="background: {{t.panel}}; border: 1px solid {{t.line}}; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 15px; font-weight: 800; color: {{t.amber}}">// biggest drops</span>
+        <sc-for list="{{board}}" as="b" hint-placeholder-count="6">
+          <div style="display: grid; grid-template-columns: 22px minmax(0, 1fr) 34px 48px; gap: 8px; align-items: center; font-size: 13px; padding: 7px 0; border-bottom: 1px solid {{t.line}}">
+            <span style="color: {{t.faint}}">{{b.r}}</span>
+            <span style="font-family: Inter, sans-serif; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{b.name}}</span>
+            <span style="font-weight: 800; text-align: right">{{b.p}}</span>
+            <span style="text-align: right; color: {{t.crit}}; font-weight: 700">{{b.d}}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="background: {{t.panel}}; border: 1px solid {{t.line}}; border-radius: 16px; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <span style="font-size: 15px; font-weight: 800; color: {{t.amber}}">// why this style</span>
+        <span style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.55; color: {{t.sub}}">Made for wall screens and incident bridges. Your service is the home team and its SLO numbers are the score. Customers are the players on the field, so leaders can see who is taking hits and move people to match.</span>
+        <span style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.55; color: {{t.sub}}">Leaders switch the header to “All incidents” for a multi-game view: one row per live incident, each with its own field.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 50px; display: flex; align-items: stretch; background: {{t.panel}}; border-top: 1px solid {{t.line}}; font-size: 13px; overflow: hidden">
+    <div style="display: flex; align-items: center; padding: 0 18px; background: {{t.well}}; color: {{t.amber}}; font-weight: 800; font-size: 11px; letter-spacing: 0.14em; flex-shrink: 0">EVENT FEED</div>
+    <sc-for list="{{ticker}}" as="e" hint-placeholder-count="5">
+      <div style="display: flex; align-items: center; gap: 10px; padding: 0 20px; border-right: 1px solid {{t.line}}; white-space: nowrap; flex-shrink: 0">
+        <span style="color: {{t.amber}}; font-weight: 700">{{e.at}}</span><span style="font-family: Inter, sans-serif">{{e.text}}</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  theme() {
+    const T = {
+      dark: { bg: '#02050B', panel: '#090D14', raised: '#0F1319', well: '#1b1e23', line: '#2A2E35', text: '#ECE3D8', sub: '#BDB1A3', faint: '#93969C', muted: '#5C6068', amber: '#FC7B00', accent: '#7698FF', onAccent: '#02050B', crit: '#F9780C', onCrit: '#02050B', high: '#DD8834', watch: '#B8865A', ok: '#7698FF', toggle: 'Light mode' },
+      light: { bg: '#F2ECE4', panel: '#FBF8F3', raised: '#FFFFFF', well: '#EAE2D7', line: '#D9CFC2', text: '#1b1e23', sub: '#4A4540', faint: '#6B655E', muted: '#A69C8F', amber: '#A64A00', accent: '#2F55B0', onAccent: '#FFFFFF', crit: '#B04F00', onCrit: '#FFFFFF', high: '#9A5418', watch: '#7D4317', ok: '#2F55B0', toggle: 'Dark mode' }
+    };
+    const mode = (this.state && this.state.mode) || this.props.theme || 'dark';
+    return { mode, t: T[mode] || T.dark };
+  }
+  renderVals() {
+    const { mode, t } = this.theme();
+    const lv = (p) => p < 45 ? { label: 'CRITICAL', c: t.crit, bs: 'solid', chipBg: t.crit, chipFg: t.onCrit }
+      : p < 60 ? { label: 'HIGH', c: t.high, bs: 'solid', chipBg: 'transparent', chipFg: t.high }
+      : p < 75 ? { label: 'WATCH', c: t.watch, bs: 'dashed', chipBg: 'transparent', chipFg: t.watch }
+      : { label: 'HEALTHY', c: t.ok, bs: 'solid', chipBg: 'transparent', chipFg: t.ok };
+    const field = [
+      ['Halcyon Freight', 'TIER 1', '$4.2M', 42, 'Sev1 · update due in 0:48'],
+      ['Copperline Bank', 'TIER 1', '$3.8M', 51, 'Sev2 · customer on bridge'],
+      ['Meridian Health', 'TIER 1', '$2.9M', 58, 'No case yet · proactive note sent'],
+      ['Atlas Retail', 'TIER 2', '$1.6M', 49, 'Sev2 · waiting on us'],
+      ['Ferro Mobility', 'TIER 2', '$1.1M', 63, 'Sev3 · workaround applied'],
+      ['Bluepeak Energy', 'TIER 2', '$0.9M', 67, 'No case'],
+      ['Quill & Vale', 'TIER 3', '$0.4M', 71, 'Sev3 · new'],
+      ['+ 7 more', 'TIER 3', '$1.3M', 78, 'Show all impacted']
+    ].map(([name, tier, arr, pulse, c], i) => ({ rank: i + 1, name, tier, arr, pulse, case: c, ...lv(pulse) }));
+    return {
+      t, field,
+      toggle: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' }),
+      bug: [
+        { k: 'ELAPSED', v: '00:47:12', c: t.text },
+        { k: 'SEV', v: '1', c: t.crit },
+        { k: 'NEXT COMMS', v: '12:48', c: t.amber }
+      ],
+      scores: [
+        { k: 'ERROR RATE', v: '4.8%', n: 'target under 0.1%', c: t.crit },
+        { k: 'P99 LATENCY', v: '2.8s', n: '8× normal', c: t.high },
+        { k: 'SLO BURN', v: '6.2×', n: 'pages above 2×', c: t.crit },
+        { k: 'BUDGET LEFT', v: '31%', n: '28-day window', c: t.watch },
+        { k: 'CUSTOMERS HIT', v: '14', n: '3 Tier 1 · $16.2M ARR', c: t.accent }
+      ],
+      board: [
+        { r: '1', name: 'Halcyon Freight', p: '42', d: '▼18' },
+        { r: '2', name: 'Copperline Bank', p: '51', d: '▼14' },
+        { r: '3', name: 'Atlas Retail', p: '49', d: '▼11' },
+        { r: '4', name: 'Meridian Health', p: '58', d: '▼9' },
+        { r: '5', name: 'Ferro Mobility', p: '63', d: '▼6' },
+        { r: '6', name: 'Bluepeak Energy', p: '67', d: '▼4' }
+      ],
+      ticker: [
+        { at: '14:11', text: 'Copperline Bank opened Sev2 · linked to INC-2291' },
+        { at: '14:05', text: 'Status page set to “Degraded performance”' },
+        { at: '13:58', text: 'Primary DB failover · replicas lag 40s' },
+        { at: '13:31', text: 'Halcyon Freight Sev1 case 00481233 opened' },
+        { at: '13:22', text: 'Deploy labels-api v2.41.0' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

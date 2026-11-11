@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Style C Roster Board</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7698FF}a:hover{color:#9DB4FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 980px; box-sizing: border-box; padding: 44px 56px; background: {{t.bg}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; display: flex; flex-direction: column; gap: 24px">
+
+  <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <span style="font-size: 12px; color: {{t.faint}}; letter-spacing: 0.12em">STYLE C · ROSTER BOARD · EXECUTIVE PORTFOLIO</span>
+      <h1 style="margin: 0; font-size: 40px; line-height: 1; font-weight: 800; color: {{t.amber}}">Top 48 accounts</h1>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center">
+      <sc-for list="{{filters}}" as="f" hint-placeholder-count="4">
+        <button style="height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid {{f.bd}}; background: {{f.bg}}; color: {{f.fg}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; cursor: pointer">{{f.label}}</button>
+      </sc-for>
+      <button onClick="{{toggle}}" aria-label="Toggle light and dark theme" style="height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid {{t.line}}; background: {{t.raised}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 8px"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"></path></svg>{{t.toggle}}</button>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) 1.6fr; gap: 1px; background: {{t.line}}; border: 1px solid {{t.line}}; border-radius: 16px; overflow: hidden">
+    <sc-for list="{{kpis}}" as="k" hint-placeholder-count="5">
+      <div style="background: {{t.panel}}; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+        <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: {{t.faint}}">{{k.k}}</span>
+        <span style="font-size: 32px; font-weight: 800; line-height: 1; color: {{k.c}}">{{k.v}}</span>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.sub}}">{{k.n}}</span>
+      </div>
+    </sc-for>
+    <div style="background: {{t.panel}}; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+      <span style="font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: {{t.faint}}">ARR BY STATUS · $118M</span>
+      <div style="display: flex; height: 16px; border-radius: 5px; overflow: hidden; gap: 2px">
+        <sc-for list="{{arrSplit}}" as="a" hint-placeholder-count="4">
+          <div style="width: {{a.w}}; background: {{a.c}}"></div>
+        </sc-for>
+      </div>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; font-size: 11px; color: {{t.sub}}">
+        <sc-for list="{{arrSplit}}" as="a" hint-placeholder-count="4">
+          <span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: {{a.c}}"></span>{{a.label}} {{a.v}}</span>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; flex: 1">
+    <sc-for list="{{roster}}" as="r" hint-placeholder-count="12">
+      <div style="position: relative; background: {{t.raised}}; border: {{r.bw}} {{r.bs}} {{r.c}}; border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; box-sizing: border-box">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-size: 10px; font-weight: 800; letter-spacing: 0.08em; padding: 3px 8px; border-radius: 5px; background: {{r.chipBg}}; color: {{r.chipFg}}; border: 1.5px {{r.bs}} {{r.c}}">{{r.label}}</span>
+          <span style="display: flex; gap: 6px; align-items: center; font-size: 10px; font-weight: 800; letter-spacing: 0.06em; color: {{t.crit}}">{{r.flags}}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 10px">
+          <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0">
+            <span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.name}}</span>
+            <span style="font-size: 11px; color: {{t.faint}}">{{r.tier}} · {{r.arr}} · renews {{r.renew}}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end">
+            <span style="font-size: 32px; font-weight: 800; line-height: 1; color: {{r.c}}">{{r.pulse}}</span>
+            <span style="font-size: 11px; font-weight: 700; color: {{r.dc}}">{{r.delta}}</span>
+          </div>
+        </div>
+        <div style="height: 4px; border-radius: 2px; background: {{t.well}}; overflow: hidden"><div style="height: 100%; width: {{r.w}}; background: {{r.c}}"></div></div>
+        <span style="font-family: Inter, sans-serif; font-size: 12px; line-height: 1.4; color: {{t.sub}}">{{r.why}}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; font-family: Inter, sans-serif; font-size: 12px; color: {{t.faint}}">
+    <span>Sorted by verdict, then pulse. Click a card for L1; long-press to message the account team.</span>
+    <span style="font-family: 'JetBrains Mono', monospace">● LIVE = in an ongoing incident · S1 = Sev1 open · R90 = renewal within 90 days</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  theme() {
+    const T = {
+      dark: { bg: '#02050B', panel: '#090D14', raised: '#0F1319', well: '#1b1e23', line: '#2A2E35', text: '#ECE3D8', sub: '#BDB1A3', faint: '#93969C', muted: '#5C6068', amber: '#FC7B00', accent: '#7698FF', onAccent: '#02050B', crit: '#F9780C', onCrit: '#02050B', high: '#DD8834', watch: '#B8865A', ok: '#7698FF', toggle: 'Light mode' },
+      light: { bg: '#F2ECE4', panel: '#FBF8F3', raised: '#FFFFFF', well: '#EAE2D7', line: '#D9CFC2', text: '#1b1e23', sub: '#4A4540', faint: '#6B655E', muted: '#A69C8F', amber: '#A64A00', accent: '#2F55B0', onAccent: '#FFFFFF', crit: '#B04F00', onCrit: '#FFFFFF', high: '#9A5418', watch: '#7D4317', ok: '#2F55B0', toggle: 'Dark mode' }
+    };
+    const mode = (this.state && this.state.mode) || this.props.theme || 'dark';
+    return { mode, t: T[mode] || T.dark };
+  }
+  renderVals() {
+    const { mode, t } = this.theme();
+    const lv = (p) => p < 45 ? { label: 'CRITICAL', c: t.crit, bs: 'solid', bw: '3px', chipBg: t.crit, chipFg: t.onCrit }
+      : p < 60 ? { label: 'HIGH', c: t.high, bs: 'solid', bw: '2px', chipBg: 'transparent', chipFg: t.high }
+      : p < 75 ? { label: 'WATCH', c: t.watch, bs: 'dashed', bw: '2px', chipBg: 'transparent', chipFg: t.watch }
+      : { label: 'HEALTHY', c: t.ok, bs: 'solid', bw: '1px', chipBg: 'transparent', chipFg: t.ok };
+    const rows = [
+      ['Halcyon Freight', 'T1', '$4.2M', '74d', 42, -18, '● LIVE  S1  R90', 'Second outage this quarter, mid-renewal. CTO call today.'],
+      ['Atlas Retail', 'T2', '$1.6M', '38d', 49, -11, '● LIVE  R90', 'Peak season starts in 9 days; checkout latency complaints.'],
+      ['Copperline Bank', 'T1', '$3.8M', '212d', 51, -14, '● LIVE', 'On the INC-2291 bridge; regulator reporting window opens Friday.'],
+      ['Meridian Health', 'T1', '$2.9M', '61d', 58, -9, 'R90', 'Champion left last month; new VP has not met us.'],
+      ['Northgate Media', 'T1', '$2.1M', '300d', 62, -3, '', 'Adoption flat for 3 months; expansion stalled.'],
+      ['Ferro Mobility', 'T2', '$1.1M', '140d', 63, -6, '', 'Sev3 workaround in place; asking for credits.'],
+      ['Bluepeak Energy', 'T2', '$0.9M', '88d', 67, -4, 'R90', 'Pricing pushback in renewal draft.'],
+      ['Quill & Vale', 'T3', '$0.4M', '45d', 71, -2, 'R90', 'Small, but a reference customer for retail.'],
+      ['Solano Insurance', 'T1', '$5.4M', '190d', 72, 2, '', 'Stable. Two Sev3s, both trending to close.'],
+      ['Kestrel Airlines', 'T1', '$6.8M', '260d', 81, 4, '', 'Expansion signed; launch next week.'],
+      ['Orbis Telecom', 'T1', '$4.9M', '150d', 86, 1, '', 'Healthy. QBR scheduled Nov 19.'],
+      ['Larkspur Foods', 'T2', '$1.2M', '120d', 90, 3, '', 'Healthy. Highest CSAT in portfolio.']
+    ];
+    const roster = rows.map(([name, tier, arr, renew, pulse, d, flags, why]) => ({
+      name, tier, arr, renew, pulse, flags, why, w: pulse + '%',
+      delta: (d < 0 ? '▼' + (-d) : '▲' + d), dc: d < 0 ? t.crit : t.ok, ...lv(pulse)
+    }));
+    return {
+      t, roster,
+      toggle: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' }),
+      filters: [
+        { label: 'ALL 48', bg: t.amber, fg: t.onCrit, bd: t.amber },
+        { label: 'AT RISK 9', bg: 'transparent', fg: t.text, bd: t.line },
+        { label: 'RENEWING ≤90D 11', bg: 'transparent', fg: t.text, bd: t.line },
+        { label: 'IN INCIDENT 3', bg: 'transparent', fg: t.text, bd: t.line }
+      ],
+      kpis: [
+        { k: 'ARR AT RISK', v: '$11.6M', n: '9 accounts · ▲$4.2M today', c: t.crit },
+        { k: 'SEV1 OPEN', v: '3', n: '2 on Tier 1', c: t.crit },
+        { k: 'LIVE INCIDENTS', v: '2', n: '14 customers touched', c: t.high },
+        { k: 'RENEWALS ≤90D', v: '11', n: '4 of them at risk', c: t.watch },
+        { k: 'PORTFOLIO PULSE', v: '71', n: '▼3 week on week', c: t.accent }
+      ],
+      arrSplit: [
+        { label: 'Crit', v: '$4.2M', w: '4%', c: t.crit },
+        { label: 'High', v: '$7.4M', w: '6%', c: t.high },
+        { label: 'Watch', v: '$21M', w: '18%', c: t.watch },
+        { label: 'Healthy', v: '$85M', w: '72%', c: t.ok }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

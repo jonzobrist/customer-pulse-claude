@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One customer, six lenses</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7698FF}a:hover{color:#9DB4FF}
+</style>
+</helmet>
+<div style="width: 1840px; height: 1000px; box-sizing: border-box; padding: 56px 50px; background: {{t.bg}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 40px">
+    <div style="display: flex; flex-direction: column; gap: 10px; max-width: 1080px">
+      <div style="font-size: 13px; letter-spacing: 0.12em; color: {{t.faint}}">SAME CUSTOMER · SAME MOMENT · 14:12 PT</div>
+      <h1 style="margin: 0; font-size: 44px; line-height: 1.05; font-weight: 800; color: {{t.amber}}">One customer, six lenses</h1>
+      <p style="margin: 0; font-family: Inter, sans-serif; font-size: 17px; line-height: 1.55; color: {{t.sub}}">Halcyon Freight during incident INC-2291. One card template; the hero metric, stat line, risk band and next move are picked per role. It is one product with role presets, not six apps.</p>
+    </div>
+    <button onClick="{{toggle}}" aria-label="Toggle light and dark theme" style="height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid {{t.line}}; background: {{t.raised}}; color: {{t.text}}; font-family: 'JetBrains Mono', monospace; font-size: 13px; cursor: pointer; display: flex; align-items: center; gap: 10px"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"></path></svg>{{t.toggle}}</button>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; align-items: stretch">
+    <sc-for list="{{lenses}}" as="p" hint-placeholder-count="6">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-size: 18px; font-weight: 800">{{p.role}}</span>
+          <span style="font-size: 11px; font-weight: 700; padding: 4px 8px; border-radius: 6px; background: {{t.well}}; color: {{t.amber}}">{{p.level}}</span>
+        </div>
+        <div style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.45; color: {{t.sub}}; min-height: 56px">“{{p.q}}”</div>
+
+        <div style="flex: 1; background: {{t.raised}}; border: 3px solid {{t.crit}}; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: {{t.shadow}}">
+          <div style="display: flex; gap: 10px; align-items: center">
+            <div style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px; background: {{t.well}}; color: {{t.amber}}; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px">HF</div>
+            <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+              <span style="font-weight: 800; font-size: 14px">Halcyon Freight</span>
+              <span style="font-size: 11px; color: {{t.faint}}">{{p.sub}}</span>
+            </div>
+          </div>
+
+          <div style="background: {{t.well}}; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 3px">
+            <span style="font-size: 11px; color: {{t.faint}}; font-weight: 700; letter-spacing: 0.08em">{{p.heroLabel}}</span>
+            <span style="font-size: 38px; font-weight: 800; line-height: 1.05; color: {{t.crit}}">{{p.hero}}</span>
+            <span style="font-family: Inter, sans-serif; font-size: 12px; color: {{t.sub}}">{{p.heroNote}}</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column">
+            <sc-for list="{{p.rows}}" as="r" hint-placeholder-count="5">
+              <div style="display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-bottom: 1px solid {{t.line}}; font-size: 12px">
+                <span style="color: {{t.faint}}">{{r.k}}</span>
+                <span style="font-weight: 700; text-align: right">{{r.v}}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="background: {{t.band}}; border: 1px solid {{t.crit}}; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 5px">
+            <span style="font-size: 10px; color: {{t.bandText}}; font-weight: 800; letter-spacing: 0.08em">{{p.bandTag}}</span>
+            <span style="font-family: Inter, sans-serif; font-size: 13px; line-height: 1.4; color: #ECE3D8">{{p.band}}</span>
+          </div>
+
+          <div style="margin-top: auto; border-top: 1px solid {{t.line}}; padding-top: 10px; font-family: Inter, sans-serif; font-size: 13px; line-height: 1.45"><b style="color: {{t.accent}}">Next move:</b> {{p.next}}</div>
+        </div>
+
+        <div style="font-family: Inter, sans-serif; font-size: 12px; line-height: 1.45; color: {{t.sub}}"><b style="color: {{t.text}}">Collapsed:</b> {{p.hidden}}</div>
+        <div style="font-family: Inter, sans-serif; font-size: 12px; line-height: 1.45; color: {{t.sub}}"><b style="color: {{t.text}}">Alerts:</b> {{p.alerts}}</div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"$preview":{"width":1840,"height":1000}}'>
+class Component extends DCLogic {
+  theme() {
+    const T = {
+      dark: { bg: '#02050B', panel: '#090D14', raised: '#0F1319', well: '#1b1e23', line: '#2A2E35', text: '#ECE3D8', sub: '#BDB1A3', faint: '#93969C', amber: '#FC7B00', accent: '#7698FF', onAccent: '#02050B', crit: '#F9780C', onCrit: '#02050B', high: '#DD8834', watch: '#B8865A', ok: '#7698FF', band: '#1b1e23', bandText: '#FD9C40', shadow: '0 24px 60px rgba(0,0,0,0.7)', toggle: 'Light mode' },
+      light: { bg: '#F2ECE4', panel: '#FBF8F3', raised: '#FFFFFF', well: '#EAE2D7', line: '#D9CFC2', text: '#1b1e23', sub: '#4A4540', faint: '#6B655E', amber: '#A64A00', accent: '#2F55B0', onAccent: '#FFFFFF', crit: '#B04F00', onCrit: '#FFFFFF', high: '#9A5418', watch: '#7D4317', ok: '#2F55B0', band: '#1b1e23', bandText: '#FD9C40', shadow: '0 18px 40px rgba(60,40,20,0.14)', toggle: 'Dark mode' }
+    };
+    const mode = (this.state && this.state.mode) || this.props.theme || 'dark';
+    return { mode, t: T[mode] || T.dark };
+  }
+  renderVals() {
+    const { mode, t } = this.theme();
+    return {
+      t,
+      toggle: () => this.setState({ mode: mode === 'dark' ? 'light' : 'dark' }),
+      lenses: [
+        {
+          role: 'Executive', level: 'L0→L1', q: 'Is revenue at risk, and do I need to call someone?',
+          sub: 'Tier 1 · sponsor: VP Ops',
+          heroLabel: 'ARR AT RISK', hero: '$4.2M', heroNote: 'Renewal in 74 days · Pulse 42 ▼18',
+          rows: [ { k: 'Sev1 open', v: '1' }, { k: 'Live incidents', v: '1' }, { k: 'Sentiment', v: 'Falling' }, { k: 'Renewal stage', v: 'Negotiation' }, { k: 'Last exec touch', v: '41d ago' } ],
+          bandTag: 'WHY IT MATTERS', band: 'Second major outage this quarter, during renewal talks.',
+          next: 'Call their CTO today; the AE has prepped notes.',
+          hidden: 'case IDs, SLA clocks, service names, traces',
+          alerts: 'Push only for Sev1 on Tier 1, or ARR at risk over $1M'
+        },
+        {
+          role: 'Account team', level: 'L1→L2', q: 'What do I tell this customer today?',
+          sub: 'AE M. Okafor · CSM R. Lindqvist',
+          heroLabel: 'PULSE', hero: '42', heroNote: '▼18 in 24h · was 60 last week',
+          rows: [ { k: 'Open cases', v: '7 (1 Sev1)' }, { k: 'CSAT 90d', v: '3.1 / 5' }, { k: 'Opportunity', v: 'Renewal +2 SKUs' }, { k: 'Status page', v: 'sent 14:05' }, { k: 'Next update', v: '15:00' } ],
+          bandTag: 'IN PLAIN LANGUAGE', band: 'Label printing is down for some East-coast warehouses. Engineers are on it; a workaround exists.',
+          next: 'Send the drafted update and book a post-incident review.',
+          hidden: 'deploy versions, error budgets, trace IDs',
+          alerts: 'Any Sev1/Sev2 on owned accounts; sentiment drop over 10'
+        },
+        {
+          role: 'Service owner', level: 'L1/svc', q: 'Which customers is my service hurting right now?',
+          sub: 'Your service: Label Service',
+          heroLabel: 'ERROR RATE', hero: '4.8%', heroNote: 'SLO 99.9% · burn 6.2× · 31% budget left',
+          rows: [ { k: 'Customers hit', v: '14' }, { k: 'This one ranks', v: '#1 by ARR' }, { k: 'Calls failing', v: '18k / hr' }, { k: 'Linked cases', v: '5' }, { k: 'Region', v: 'us-east-2' } ],
+          bandTag: 'LIVE · INC-2291', band: 'Database failover in us-east-2. Your service is downstream, not the cause.',
+          next: 'Enable regional failover for Tier 1 tenants.',
+          hidden: 'renewal, opportunity, sentiment',
+          alerts: 'SLO burn over 2×, or any Tier 1 customer impacted'
+        },
+        {
+          role: 'Key leader', level: 'L0→L1', q: 'Where do I put people and attention?',
+          sub: 'Escalation E2 · director on point',
+          heroLabel: 'SLA BREACH IN', hero: '1h12m', heroNote: 'Resolution SLA on the Sev1 case',
+          rows: [ { k: 'Engaged', v: '3 sup · 4 eng' }, { k: 'Incident cmdr', v: 'Assigned' }, { k: 'Accounts in INC', v: '14 (3 T1)' }, { k: 'Escalations today', v: '2' }, { k: 'Comms cadence', v: '30m · on time' } ],
+          bandTag: 'CROSS-ACCOUNT', band: 'This one incident is driving 5 cases across 3 Tier 1 customers.',
+          next: 'Merge the 5 cases under one parent and add a second IC.',
+          hidden: 'raw logs, case text',
+          alerts: 'SLA breach under 2h, escalation E2+, many accounts on one incident'
+        },
+        {
+          role: 'Engineer', level: 'L3', q: 'What is the blast radius, and what changed?',
+          sub: 'tenant hf-prod-01 · cell use2-c',
+          heroLabel: 'SERVICES HIT', hero: '3 / 5', heroNote: 'labels-api, rates-api, tracking-ws',
+          rows: [ { k: 'Signature', v: 'PG conn reset' }, { k: 'Deploy 13:22', v: 'labels v2.41' }, { k: 'p99', v: '2.8s (8×)' }, { k: 'Traces', v: '312 sampled' }, { k: 'Runbook', v: 'RB-DB-07' } ],
+          bandTag: 'LIVE · INC-2291', band: 'Primary DB failover at 13:58; replicas lag 40s. Rollback of v2.41 is staged.',
+          next: 'Rule lag vs v2.41 in or out; post in #inc-2291.',
+          hidden: 'ARR, renewal, sentiment, contacts',
+          alerts: 'Pages on SLO burn; the card opens straight to the dossier'
+        },
+        {
+          role: 'Support', level: 'L2→L3', q: 'What have we promised, and what is next?',
+          sub: 'Premier 24/7 · 15-min Sev1 response',
+          heroLabel: 'NEXT UPDATE DUE', hero: '0:48', heroNote: 'Promised 15:00 to their ops lead, by phone',
+          rows: [ { k: 'Case', v: '00481233 · S1' }, { k: 'Age', v: '2h 14m' }, { k: 'Last contact', v: '14:05 email' }, { k: 'Incident', v: 'INC-2291' }, { k: 'Workaround', v: 'KB-1182' } ],
+          bandTag: 'KNOWN ISSUE', band: 'Attach to INC-2291 so the customer gets incident updates automatically.',
+          next: 'Share workaround KB-1182 and confirm they received it.',
+          hidden: 'revenue, opportunity, deploy detail',
+          alerts: 'Update due in 15m, customer reply, linked incident changes'
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
